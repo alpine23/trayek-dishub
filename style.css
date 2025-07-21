@@ -1,0 +1,361 @@
+/* RESET DAN BODY */
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container banner */
+.header-banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Teks overlay */
+.banner-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-overlay-text h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dinas-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.788);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Ini yang membuat semuanya sejajar! */
+}
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    transition: font-size 0.3s ease;
+}
+
+.dinas-navbar.shrink {
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.788);
+}
+
+.logo {
+    height: 60px;
+    transition: height 0.3s ease;
+}
+
+.dinas-navbar.shrink .logo {
+    height: 40px;
+}
+
+.dinas-navbar.shrink .brand-name {
+    font-size: 16px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #dc3545;
+}
+
+/* Tambahan RESPONSIVE */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu .close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    color: red;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 15px 0;
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* FORM STYLING */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    color: #343a40;
+}
+
+select,
+button {
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+}
+
+select:focus,
+button:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.25);
+}
+
+/* BUTTON STYLING */
+button {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0b5ed7;
+}
+
+/* Animasi slide-in */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling untuk card trayek */
+.trayek-card {
+    border: none;
+    border-radius: 12px;
+    /* Membuat sudut lebih halus */
+    background: #FFD700;
+    /* Gradient background */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Menyusun elemen secara horizontal */
+    padding: 15px 20px;
+    /* Padding lebih konsisten dan sedikit lebih lebar */
+    width: 100%;
+    max-width: 600px;
+    /* Membatasi lebar card agar tidak terlalu besar */
+    margin: 10px auto;
+    /* Membuat card berada di tengah */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Efek bayangan untuk kedalaman */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Efek transisi */
+}
+
+/* Hover effect */
+.trayek-card:hover {
+    transform: translateY(-5px);
+    /* Mengangkat sedikit ketika dihover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    /* Bayangan lebih besar saat dihover */
+}
+
+/* Ikon bus */
+.trayek-card i {
+    color: #fff;
+    /* Warna putih untuk ikon bus */
+    background-color: #002147;
+    /* Background gelap untuk ikon */
+    padding: 15px;
+    border-radius: 50%;
+    /* Membuat ikon berbentuk bulat */
+    margin-right: 15px;
+    /* Memberikan jarak antara ikon dan teks */
+    font-size: 24px;
+    /* Ukuran ikon bus lebih besar */
+    flex-shrink: 0;
+    /* Menjaga ukuran ikon agar tidak mengecil */
+}
+
+/* Menata body card untuk satu baris */
+.trayek-card .card-body {
+    display: flex;
+    align-items: center;
+    /* Menjaga elemen tetap sejajar */
+    justify-content: flex-start;
+    /* Menyusun elemen secara horizontal */
+    width: 100%;
+}
+
+/* Menata konten trayek dan rute dalam satu baris */
+.trayek-card .card-title {
+    font-weight: bold;
+    font-size: 20px;
+    /* Ukuran font lebih besar */
+    color: #fff;
+    margin-right: 15px;
+    /* Jarak antara nomor trayek dan rute */
+    flex-grow: 1;
+    /* Memungkinkan judul trayek untuk mengambil sisa ruang */
+}
+
+/* Styling untuk teks rute */
+.trayek-card .card-text {
+    color: #002147;
+    font-size: 16px;
+    justify-content: flex-start;
+}
+    
+/* Styling untuk judul hasil trayek */
+#hasilJadwal h5 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #002147;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .trayek-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .trayek-card .col-4,
+    .trayek-card .col-8 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .trayek-card i {
+        margin-bottom: 15px;
+        /* Memberi jarak bawah pada ikon */
+    }
+}
+
+.trayek-card i {
+    animation: bounce 1s ease infinite;
+    /* Animasi bounce untuk ikon */
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
