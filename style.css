@@ -462,18 +462,6 @@ button:hover {
     animation: bounce 1s ease infinite;
 }
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 .tarif-info {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
