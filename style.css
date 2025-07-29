@@ -5,22 +5,124 @@ ul {
     padding: 0;
 }
 
+/* Pastikan body tidak menyebabkan scroll horizontal */
 body {
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-top: 110px; /* Adjust as necessary to fit the navbar */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Reset untuk mencegah scroll horizontal pada elemen lain */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Container banner */
 .header-banner {
     position: relative;
-    height: 100vh;
+    height: 50vh;
+    /* Use a percentage-based height to adjust better on mobile */
     overflow: hidden;
+    width: 100%;
 }
 
 .banner-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Ensures the image covers the container without distorting */
 }
+
+/* Container banner */
+.header-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Use full viewport height */
+    overflow: hidden;
+    z-index: 1;
+    /* Ensure the banner is behind the navbar */
+}
+
+/* Navbar styling */
+.dinas-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    /* Ensure navbar stays above the banner */
+    padding: 20px 30px;
+    transition: all 0.3s ease;
+}
+
+/* Teks overlay */
+.banner-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    /* Keeps overlay text above the image */
+    padding: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-overlay-text h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Adjusting the body padding to avoid the navbar cutting off the banner */
+body {
+    padding-top: 0px;
+    /* Adjust to the height of the navbar */
+}
+
+/* Media query for smaller screens (mobile view) */
+@media (max-width: 768px) {
+
+    /* Adjust the height of the banner */
+    .header-banner {
+        height: 20vh;
+        /* Lower height on smaller screens */
+    }
+
+    .banner-overlay-text h1 {
+        font-size: 2.5rem;
+        /* Smaller font size for the overlay text */
+    }
+
+    /* Ensure banner image fits without breaking */
+    .banner-image {
+        object-fit: cover;
+        object-position: center center;
+        /* Ensures the image is centered properly */
+    }
+
+    .dinas-navbar {
+        padding: 15px 20px;
+        /* Reduce padding on mobile for a better fit */
+    }
+
+    /* Adjust body padding for mobile */
+    body {
+        padding-top: 110px;
+        /* Adjusted padding for smaller screen */
+    }
+}
+
 
 /* Teks overlay */
 .banner-overlay-text {
@@ -236,85 +338,81 @@ button:hover {
     }
 }
 
-/* Styling untuk card trayek */
+/* Styling for trayek card */
 .trayek-card {
     border: none;
     border-radius: 12px;
-    /* Membuat sudut lebih halus */
     background: #FFD700;
     /* Gradient background */
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* Menyusun elemen secara horizontal */
     padding: 15px 20px;
-    /* Padding lebih konsisten dan sedikit lebih lebar */
+    /* Consistent padding */
     width: 100%;
-    max-width: 600px;
-    /* Membatasi lebar card agar tidak terlalu besar */
+    max-width: 500px;
+    /* Maximum width for larger screens */
     margin: 10px auto;
-    /* Membuat card berada di tengah */
+    /* Center the card */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    /* Efek bayangan untuk kedalaman */
+    /* Shadow effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Efek transisi */
 }
 
 /* Hover effect */
 .trayek-card:hover {
     transform: translateY(-5px);
-    /* Mengangkat sedikit ketika dihover */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    /* Bayangan lebih besar saat dihover */
+    /* Larger shadow on hover */
 }
 
-/* Ikon bus */
+/* Icon for bus */
 .trayek-card i {
     color: #fff;
-    /* Warna putih untuk ikon bus */
+    /* White icon */
     background-color: #002147;
-    /* Background gelap untuk ikon */
+    /* Dark background for icon */
     padding: 15px;
     border-radius: 50%;
-    /* Membuat ikon berbentuk bulat */
+    /* Circular icon */
     margin-right: 15px;
-    /* Memberikan jarak antara ikon dan teks */
+    /* Spacing between icon and text */
     font-size: 24px;
-    /* Ukuran ikon bus lebih besar */
     flex-shrink: 0;
-    /* Menjaga ukuran ikon agar tidak mengecil */
+    /* Prevent shrinking of icon */
 }
 
-/* Menata body card untuk satu baris */
+/* Flex layout for card body */
 .trayek-card .card-body {
     display: flex;
     align-items: center;
-    /* Menjaga elemen tetap sejajar */
+    /* Align vertically */
     justify-content: flex-start;
-    /* Menyusun elemen secara horizontal */
     width: 100%;
 }
 
-/* Menata konten trayek dan rute dalam satu baris */
+/* Styling for trayek title */
 .trayek-card .card-title {
     font-weight: bold;
-    font-size: 20px;
-    /* Ukuran font lebih besar */
+    font-size: 22px;
+    /* Increase font size for better readability */
     color: #fff;
+    /* White color for title */
     margin-right: 15px;
-    /* Jarak antara nomor trayek dan rute */
     flex-grow: 1;
-    /* Memungkinkan judul trayek untuk mengambil sisa ruang */
+    text-align: left;
 }
 
-/* Styling untuk teks rute */
+/* Styling for route text */
 .trayek-card .card-text {
     color: #002147;
     font-size: 16px;
-    justify-content: flex-start;
+    line-height: 1.4;
+    /* Improve line height for readability */
+    text-align: left;
 }
-    
-/* Styling untuk judul hasil trayek */
+
+/* Styling for the trayek list header */
 #hasilJadwal h5 {
     font-size: 24px;
     font-weight: bold;
@@ -323,29 +421,45 @@ button:hover {
     text-align: center;
 }
 
-
-@media (max-width: 768px) {
+/* Media Query for Small Devices (Mobile) */
+@media (max-width: 576px) {
     .trayek-card {
         flex-direction: column;
+        /* Stack icon and text vertically */
         align-items: center;
-        padding: 15px;
+        /* Center elements */
+        padding: 10px 15px;
+        /* Less padding for smaller screens */
+        max-width: 90%;
+        /* Adjust card width to take up most of the screen */
     }
 
-    .trayek-card .col-4,
-    .trayek-card .col-8 {
-        width: 100%;
+    /* Ensure proper centering for mobile layout */
+    .trayek-card .card-title {
+        font-size: 18px;
+        /* Smaller title font for mobile */
         text-align: center;
+        /* Center-align the title */
+    }
+
+    .trayek-card .card-text {
+        font-size: 14px;
+        /* Smaller text size for mobile */
+        text-align: center;
+        /* Center-align route text on mobile */
     }
 
     .trayek-card i {
-        margin-bottom: 15px;
-        /* Memberi jarak bawah pada ikon */
+        margin-bottom: 10px;
+        /* Less space below the icon */
+        font-size: 20px;
+        /* Smaller icon size */
     }
 }
 
+/* Icon animation */
 .trayek-card i {
     animation: bounce 1s ease infinite;
-    /* Animasi bounce untuk ikon */
 }
 
 @keyframes bounce {
@@ -358,4 +472,69 @@ button:hover {
     50% {
         transform: translateY(-10px);
     }
+}
+
+.tarif-info {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.tarif-info strong {
+    color: #004085;
+    font-size: 22px;
+}
+
+.tarif-detail {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tarif-item {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.tarif-label {
+    font-weight: bold;
+}
+
+.tarif-amount {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.footer {
+    padding: 50px;
+    background-color: #002147;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: auto;
+    color: #ccc;
+    text-align: center;
+}
+
+.footer-content {
+    z-index: 0.5;
+}
+
+/* Tambahkan border jika ingin memperjelas pemisahan footer dengan konten */
+.footer-content p,
+.footer-content small {
+    margin: 0;
 }
