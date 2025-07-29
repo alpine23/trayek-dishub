@@ -125,6 +125,11 @@ function showRouteDetails(trayekId) {
   modal.show();
 }
 
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
+}
+
 // Event listener to filter trayeks based on the selected location, only when the button is clicked
 document.querySelector("button").addEventListener("click", function () {
   fetchTrayeks(); // Display trayeks based on the selected location
