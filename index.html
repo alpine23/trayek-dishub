@@ -81,8 +81,28 @@
     </div>
   </div>
 
-  <div id="hasilJadwal" class="mt-4"></div>
-  
+  <div id="hasilJadwal" class="mt-4">
+    <!-- Trayek cards will be injected here dynamically by JavaScript -->
+  </div>
+
+  <!-- Modal for Route Details -->
+  <div class="modal fade" id="routeDetailsModal" tabindex="-1" aria-labelledby="routeDetailsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="routeDetailsModalLabel">Detail Rute</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="detailRoute">
+          <!-- Route details will be inserted here dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer mt-5">
     <div class="container">
@@ -90,12 +110,6 @@
         <p class="mb-0">© 2025 Dishub Kota Magelang | All rights reserved</p>
         <small>Info valid berdasarkan data simulasi</small>
       </div>
-      <!-- <div class="footer-image left">
-        <img src="assets/img/side.png" alt="Side Image" />
-      </div>
-      <div class="footer-image right">
-        <img src="assets/img/side.png" alt="Mirrored Side Image" />
-      </div> -->
     </div>
   </footer>
 

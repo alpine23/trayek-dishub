@@ -13,12 +13,15 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    padding-top: 110px; /* Adjust as necessary to fit the navbar */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding-top: 110px;
+    /* Adjust as necessary to fit the navbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
 }
 
 /* Reset untuk mencegah scroll horizontal pada elemen lain */
-html, body {
+html,
+body {
     width: 100%;
     overflow-x: hidden;
 }
@@ -346,78 +349,92 @@ button:hover {
     /* Gradient background */
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 15px 20px;
-    /* Consistent padding */
+    justify-content: space-between;
+    /* Distribute space between items */
+    padding: 15px 25px;
+    /* Adjusted padding */
     width: 100%;
-    max-width: 500px;
-    /* Maximum width for larger screens */
-    margin: 10px auto;
-    /* Center the card */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    /* Shadow effect */
+    max-width: 600px;
+    /* Increased max width */
+    margin: 15px auto;
+    /* Adjusted margin */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect */
 .trayek-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    /* Larger shadow on hover */
+    transform: translateY(-8px);
+    /* Slightly larger hover effect */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    /* Deeper shadow on hover */
 }
 
 /* Icon for bus */
-.trayek-card i {
+.trayek-card-icon {
+    flex-shrink: 0;
+    /* Prevent shrinking of the icon */
+    display: flex;
+    align-items: center;
+    /* Align vertically */
+    justify-content: center;
+}
+
+.trayek-card-icon i {
     color: #fff;
     /* White icon */
     background-color: #002147;
     /* Dark background for icon */
-    padding: 15px;
+    padding: 18px;
+    /* Larger padding */
     border-radius: 50%;
     /* Circular icon */
-    margin-right: 15px;
-    /* Spacing between icon and text */
-    font-size: 24px;
-    flex-shrink: 0;
-    /* Prevent shrinking of icon */
+    font-size: 28px;
+    /* Increased icon size */
 }
 
-/* Flex layout for card body */
-.trayek-card .card-body {
-    display: flex;
-    align-items: center;
-    /* Align vertically */
-    justify-content: flex-start;
-    width: 100%;
-}
-
-/* Styling for trayek title */
-.trayek-card .card-title {
-    font-weight: bold;
-    font-size: 22px;
-    /* Increase font size for better readability */
-    color: #fff;
-    /* White color for title */
-    margin-right: 15px;
+/* Trayek Number */
+.trayek-card-info {
     flex-grow: 1;
-    text-align: left;
+    /* Allow this section to take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content */
+    justify-content: center;
+    text-align: center;
+    /* Center text */
+}
+
+/* Styling for trayek title (Trayek Number) */
+.trayek-card-info .card-title {
+    font-weight: bold;
+    font-size: 24px;
+    /* Increased font size */
+    color: #002147;
+    /* Dark color for title */
+    margin-bottom: 10px;
+    /* Added margin for spacing */
 }
 
 /* Styling for route text */
-.trayek-card .card-text {
+.trayek-card-info .card-text {
     color: #002147;
+    /* Dark color for text */
     font-size: 16px;
-    line-height: 1.4;
-    /* Improve line height for readability */
-    text-align: left;
+    /* Optimized font size */
+    line-height: 1.5;
+    /* Improved line height */
 }
 
 /* Styling for the trayek list header */
 #hasilJadwal h5 {
-    font-size: 24px;
+    font-size: 26px;
+    /* Slightly larger font */
     font-weight: bold;
     color: #002147;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
@@ -428,39 +445,36 @@ button:hover {
         /* Stack icon and text vertically */
         align-items: center;
         /* Center elements */
-        padding: 10px 15px;
-        /* Less padding for smaller screens */
+        padding: 12px 20px;
+        /* Adjusted padding for mobile */
         max-width: 90%;
-        /* Adjust card width to take up most of the screen */
+        /* Adjusted card width to take up most of the screen */
+    }
+
+    .trayek-card-info {
+        text-align: center;
+        /* Center-align text on mobile */
     }
 
     /* Ensure proper centering for mobile layout */
-    .trayek-card .card-title {
-        font-size: 18px;
-        /* Smaller title font for mobile */
-        text-align: center;
-        /* Center-align the title */
+    .trayek-card-info .card-title {
+        font-size: 20px;
+        /* Slightly smaller title font for mobile */
     }
 
-    .trayek-card .card-text {
+    .trayek-card-info .card-text {
         font-size: 14px;
         /* Smaller text size for mobile */
-        text-align: center;
-        /* Center-align route text on mobile */
     }
 
-    .trayek-card i {
-        margin-bottom: 10px;
-        /* Less space below the icon */
-        font-size: 20px;
-        /* Smaller icon size */
+    .trayek-card-icon i {
+        margin-bottom: 15px;
+        /* More space below the icon */
+        font-size: 24px;
+        /* Larger icon size on mobile */
     }
 }
 
-/* Icon animation */
-.trayek-card i {
-    animation: bounce 1s ease infinite;
-}
 
 .tarif-info {
     font-family: 'Arial', sans-serif;
@@ -525,4 +539,50 @@ button:hover {
 .footer-content p,
 .footer-content small {
     margin: 0;
+}
+
+/* Menyentriskan modal secara vertikal */
+.modal-dialog-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menambahkan styling untuk card rute di dalam modal */
+#detailRoute {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    /* Menyentriskan teks secara horizontal */
+    padding: 10px;
+}
+
+#detailRoute h5 {
+    text-align: center;
+    /* Menyentriskan heading */
+    margin-bottom: 20px;
+    /* Memberikan sedikit jarak antara judul dan detail rute */
+}
+
+/* Styling untuk menambahkan ikon panah ke bawah */
+#detailRoute .arrow {
+    display: block;
+    /* Menampilkan panah di baris baru */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* Memberikan jarak antara panah dan teks */
+    font-size: 14px;
+    /* Mengecilkan ikon panah */
+    color: #007bff;
+}
+
+/* Menambahkan sedikit padding dan background warna untuk memperjelas setiap lokasi */
+#detailRoute span {
+    display: block;
+    /* Menampilkan lokasi rute dalam satu baris vertikal */
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 5px;
 }
