@@ -44,39 +44,49 @@
     </ul>
   </div>
 
-  <div class="container mt-4">
-    <ul class="nav nav-pills justify-content-center mb-4">
-      <li class="nav-item">
-        <a class="nav-link active rounded-pill px-4" href="index.html">Arah Trayek</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link rounded-pill px-4" href="tarif.html">Info Tarif Perjalanan</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link rounded-pill px-4" href="rute.html">Peta Rute</a>
-      </li>
-    </ul>
+  <div class="container mt-5">
+    <div class="card shadow-lg p-4 border-0 rounded-4">
+      <h4 class="text-center fw-bold mb-4">
+        <i class="fas fa-bus-alt text-primary me-2"></i> Cari Trayek Transportasi
+      </h4>
 
-    <div class="form-group mb-3">
-      <label for="halteAsal">Lokasi Tujuan</label>
-      <select id="halteAsal" class="form-select">
-        <option value="">-- Pilih Lokasi Tujuan --</option>
-        <option value="Akmil">AKMIL</option>
-        <option value="Alun-alun">ALUN-ALUN</option>
-        <option value="Artos">ARTOS</option>
-        <option value="GOR Smapta">GOR SAMAPTA</option>
-        <option value="Rindam">RINDAM</option>
-        <option value="RSU Tidar / Unimma Kampus 1">RSU TIDAR/UNIMMA KAMPUS 1</option>
-        <option value="Taman Kyai Langgeng">TAMAN KYAI LANGGENG</option>
-        <option value="Terminal Tidar">TERMINAL TIDAR</option>
-        <option value="Terminal Magersari">TERMINAL MAGERSARI</option>
-        <option value="Univ. Tidar">UNIVERSITAS TIDAR</option>
-      </select>
-    </div>
+      <ul class="nav nav-pills justify-content-center mb-4">
+        <li class="nav-item">
+          <a class="nav-link active rounded-pill px-4 py-2" href="index.html">
+            <i class="fas fa-route me-1"></i> Arah Trayek
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link rounded-pill px-4 py-2" href="tarif.html">
+            <i class="fas fa-ticket-alt me-1"></i> Info Tarif
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link rounded-pill px-4 py-2" href="rute.html">
+            <i class="fas fa-map-marked-alt me-1"></i> Peta Rute
+          </a>
+        </li>
+      </ul>
 
-    <div class="form-group mb-4">
-      <button onclick="fetchTrayeks()" class="btn btn-primary w-100">
-        Lihat Trayek
+      <div class="mb-3">
+        <label for="halteAsal" class="fw-semibold mb-2">Pilih Lokasi Tujuan</label>
+        <select id="halteAsal" class="form-select shadow-sm rounded-pill px-3 py-2">
+          <option value="">-- Pilih Lokasi Tujuan --</option>
+          <option value="Akmil">AKMIL</option>
+          <option value="Alun-alun">ALUN-ALUN</option>
+          <option value="Artos">ARTOS</option>
+          <option value="GOR Smapta">GOR SAMAPTA</option>
+          <option value="Rindam">RINDAM</option>
+          <option value="RSU Tidar / Unimma Kampus 1">RSU TIDAR/UNIMMA KAMPUS 1</option>
+          <option value="Taman Kyai Langgeng">TAMAN KYAI LANGGENG</option>
+          <option value="Terminal Tidar">TERMINAL TIDAR</option>
+          <option value="Terminal Magersari">TERMINAL MAGERSARI</option>
+          <option value="Univ. Tidar">UNIVERSITAS TIDAR</option>
+        </select>
+      </div>
+
+      <button onclick="fetchTrayeks()" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold shadow-sm">
+        <i class="fas fa-search me-2"></i> Lihat Trayek
       </button>
     </div>
   </div>
@@ -95,7 +105,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="detailRoute">
-          <!-- Route details will be inserted here dynamically -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
